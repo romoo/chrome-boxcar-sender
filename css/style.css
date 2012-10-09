@@ -1,0 +1,87 @@
+/*
+ * Styles for <Chrome Boxcar Sender>
+ * Author: Romoo Chen
+ * Email: romoochen@gmail.com
+ * Version: 0.1 [2012-10-09]
+ */
+
+body{
+  font: 14px/1.5 tahoma,arial,\5b8b\4f53;
+}
+.pop{
+  width: 400px;
+  padding: 10px 0 0;
+  position: relative;
+  text-align: center;
+}
+.settings{
+  width: 500px;
+  margin: 30px auto 0;
+  padding: 3px;
+  border-radius: 3px;
+  background: #efefef;
+  position: relative;
+}
+.settings h2{
+  background: -webkit-linear-gradient(top, #fafafa, #e0e0e0);
+  margin: 0;
+  padding: 10px 10px 11px;
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+  border: 1px solid #d8d8d8;
+  text-shadow: 0 1px 0 #fff;
+  font-weight: normal;
+}
+.settings_inner{
+  padding: 1px 10px;
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  border-top: 1px solid #ccc;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+  color: #666;
+}
+.settings dd{
+  padding: 0;
+  margin: 0;
+}
+.settings dl p{
+  margin: 10px 0 5px;
+}
+.btn_submit{
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d4d4d4 #d4d4d4 #bcbcbc;
+  box-shadow: rgba(0,0,0,0.0097) 0 1px 3px;
+  display: inline-block;
+  padding: 5px 15px;
+  color: #333;
+  border-radius: 3px;
+  text-shadow: #fff 0 1px 0;
+  background: -webkit-linear-gradient(top, #fafafa, #eaeaea);
+  margin: 10px 0;
+  outline: none;
+  text-decoration: none;  
+}
+.btn_submit:hover{
+  background: -webkit-linear-gradient(top, #599bdc, #3072b3);
+  color: #fff;
+  border-color: #518cc6;
+  border-bottom-color: #2a65a0;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+}
+.pop input{
+  height: 32px;
+  border: 1px solid #ccc;
+  padding: 0 5px;
+  width: 300px;
+  margin: 0 15px 0 0;
+}
+#console{
+  padding: 0 0 0 5px;
+  margin: 0;
+  text-align: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
