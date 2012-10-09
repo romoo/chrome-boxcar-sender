@@ -1,6 +1,6 @@
 ﻿{ 
   "name": "Boxcar Sender", 
-  "version": "0.1.8", 
+  "version": "0.1.10", 
   "description": "Quick send text from Chrome to iOS via Boxcar.", 
   "manifest_version": 2,
   "background" : {
@@ -10,7 +10,8 @@
     "contextMenus",
     "tabs",
     "<all_urls>",
-    "storage"
+    "storage",
+    "notifications"
   ],
   "icons": {
     "16" : "16.png",
@@ -23,6 +24,9 @@
     "default_title": "Boxcar Sender",
     "default_popup": "popup.html"
   },
+  "web_accessible_resources": [
+    "48.png"
+  ],
   "minimum_chrome_version": "20",
   "content_scripts": [ {
     "js": [ "./js/boxcar.js" ],
