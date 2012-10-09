@@ -49,8 +49,28 @@ body{
   margin: 10px 0 5px;
 }
 .settings dd input{
-  width: 150px;
+  width: 145px;
   height: 23px;
+  padding: 0 5px;
+  border: 1px solid #DDD;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.8) 0 1px 0;
+}
+.settings dd input#email{
+  width: 200px;
+}
+.settings #email:target{
+  border: 1px solid #DDD;
+  -webkit-animation: changeborder 3s ease-in-out;
+}
+@-webkit-keyframes changeborder
+{
+  0% {border-color: #f00;background: #FFBEBE;}
+  100% {border-color: #DDD;background: #FFF;}
+}
+.settings dt p a{
+  font-size: 11px;
+  margin-left: 10px;
+  color: #aaa;
 }
 .btn_submit{
   border-width: 1px;

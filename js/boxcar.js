@@ -7,8 +7,8 @@ api_key = '';
 
 function load() {
   chrome.storage.sync.get(["b_email","b_api_key"],function(date){
-    $('email').value = date.b_email;
-    $('api_key').value = date.b_api_key;
+    $('email').value = (date.b_email ? date.b_email : '');
+    $('api_key').value = (date.b_api_key ? date.b_api_key : 'SNGrQsRGuIbIEfraKJK0');
   });
   console.log('body loaded.');
 }
@@ -29,8 +29,8 @@ function boxcar(notification) {
   };
   var message = (notification ? notification : document.getElementById('message').value);
   chrome.storage.sync.get(["b_email","b_api_key"],function(date){
-    email= date.b_email;
-    api_key = date.b_api_key;
+    email= (date.b_email ? date.b_email : chrome.tabs.create({url: "options.html#email"}));
+    api_key = (date.b_api_key ? date.b_api_key : chrome.tabs.create({url: "options.html#email"}));
     
     var params = 'email=' + email + '&notification[from_screen_name]=Chrome' + '&notification[message]=' + message;
     req.open('POST', 'http://boxcar.io/devices/providers/' + api_key + '/notifications?' + params, true);
