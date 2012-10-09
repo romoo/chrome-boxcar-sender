@@ -23,9 +23,9 @@ function boxcar(notification) {
   var req = new XMLHttpRequest();
   req.onreadystatechange = function() {
     // TODO: do sth here based on failure/success.
-    // if (req.status == 4) {
-    //   if (req.status == 200) {}
-    // }
+    if (req.status == 200) {
+      console.log('Send it.');
+    }
   };
   var message = (notification ? notification : document.getElementById('message').value);
   chrome.storage.sync.get(["b_email","b_api_key"],function(date){

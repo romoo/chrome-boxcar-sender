@@ -39,16 +39,22 @@ body{
   border-top: 1px solid #ccc;
   border-bottom-left-radius: 1px;
   border-bottom-right-radius: 1px;
-  color: #666;
+  color: #111;
 }
 .settings dd{
   padding: 0;
   margin: 0;
 }
+.settings dl{
+  margin: 1em 0 2em 0;
+}
 .settings dl p{
+  /*font-weight: bold;*/
   margin: 10px 0 5px;
 }
 .settings dd input{
+  color: #666;
+  font-weight: normal;
   width: 145px;
   height: 23px;
   padding: 0 5px;
@@ -71,6 +77,22 @@ body{
   font-size: 11px;
   margin-left: 10px;
   color: #aaa;
+}
+.settings .checkbox{
+  padding-left: 20px;
+  vertical-align: middle;
+  line-height: 1;
+  margin-bottom: 2em;
+}
+.settings .checkbox input{
+  float: left;
+  margin: 2px 0 0 -18px;
+  vertical-align: middle;
+}
+.settings .checkbox p{
+  color: #999;
+  margin: 0;
+  font-size: 12px
 }
 .btn_submit{
   border-width: 1px;
