@@ -15,7 +15,7 @@ body{
   text-align: center;
 }
 .settings{
-  width: 500px;
+  width: 300px;
   margin: 30px auto 0;
   padding: 3px;
   border-radius: 3px;
@@ -47,6 +47,10 @@ body{
 }
 .settings dl p{
   margin: 10px 0 5px;
+}
+.settings dd input{
+  width: 150px;
+  height: 23px;
 }
 .btn_submit{
   border-width: 1px;
