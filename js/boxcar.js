@@ -42,36 +42,39 @@ function RequestPermission(callback) {
 }
 
 function boxcar(sendmessage) {
-  console.log('hah');
   var message = (sendmessage ? sendmessage : document.getElementById('message').value);
+  console.log("boxcar:" + message);
 
   var req = new XMLHttpRequest();
-  req.onreadystatechange = function() {
-    // TODO: do sth here based on failure/success.
-    if (req.readyState == 4){
-      // 4 = "loaded"
-      if (req.status == 200) {
-        console.log('Send it.');
-        // notify(message).show();
-        // background 不能触发 show() !?
-      }
-      else if(req.status == 400){
-        console.log('No application/event defined');
-      }
-      else if(req.status == 401){
-        console.log('Invalid username/password');
-      }
-    }
-  };
   chrome.storage.sync.get(["b_email","b_api_key"], function(date){
-    // email= (date.b_email ? date.b_email : chrome.tabs.create({url: "options.html#email"}));
-    // api_key = (date.b_api_key ? date.b_api_key : chrome.tabs.create({url: "options.html#email"}));
-    email= (date.b_email ? date.b_email : window.open({url: "options.html#email"}));
-    api_key = (date.b_api_key ? date.b_api_key : window.open({url: "options.html#email"}));
+    var email_page = chrome.extension.getURL('options.html#email');
+    var api_key_page = chrome.extension.getURL('options.html#email');
+    console.log(email_page);
+    // email= (date.b_email ? date.b_email : chrome.tabs.create({url: page}));
+    email= (date.b_email ? date.b_email : window.open(email_page, "popup"));
+    api_key= (date.b_api_key ? date.b_api_key : window.open(api_key_page, "popup"));
+    console.log(api_key);
     
     var params = 'email=' + email + '&notification[from_screen_name]=Chrome&notification[message]=' + message;
-    req.open('POST', 'http://boxcar.io/devices/providers/' + api_key + '/notifications?' + params, true);
+    req.open('POST', 'http://boxcar.io/devices/providers/' + api_key + '/notifications', true);
     req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    req.onreadystatechange = function() {
+      // TODO: do sth here based on failure/success.
+      if (req.readyState == 4){
+        // 4 = "loaded"
+        if (req.status == 200) {
+          console.log('Send it.');
+          // notify(message).show();
+          // background 不能触发 show() !?
+        }
+        // else if(req.status == 400){
+        //   console.log('No application/event defined');
+        // }
+        // else if(req.status == 401){
+        //   console.log('Invalid username/password');
+        // }
+      }
+    };
     req.send(params);
   });
   // $('console').innerHTML = 'send it!';
