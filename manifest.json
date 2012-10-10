@@ -9,7 +9,7 @@
   "permissions": [
     "contextMenus",
     "tabs",
-    "<all_urls>",
+    "http://boxcar.io/*",
     "storage",
     "notifications"
   ],
