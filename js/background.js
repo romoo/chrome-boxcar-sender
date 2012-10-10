@@ -12,11 +12,11 @@ function notify(text) {
     } else {
       var notification = webkitNotifications.createNotification(
         './48.png',
-        'Sended',
+        'Send.',
         text
       );
       notification.ondisplay = function() {
-        setTimeout('notification.cancel()', 5000);
+        // setTimeout('notification.cancel()', 5000);
       };
       notification.show();
     }
@@ -46,8 +46,7 @@ function boxcar(message) {
         // 4 = "loaded"
         if (req.status == 200) {
           console.log('Send it.');
-          // notify(message).show();
-          // background 不能触发 show() !?
+          notify(message).show();
         }
         else if(req.status == 400){
           console.log('No application/event defined');
@@ -76,5 +75,32 @@ chrome.contextMenus.create({
   "contexts": ["selection"],
   "onclick": function (info, tab) {
     boxcar(info.selectionText);
+  }
+});
+
+chrome.contextMenus.create({
+  "type": "normal",
+  "title": "Send Link to Boxcar",
+  "contexts": ["link"],
+  "onclick": function (info, tab) {
+    boxcar(info.linkUrl);
+  }
+});
+
+chrome.contextMenus.create({
+  "type": "normal",
+  "title": "Send Page to Boxcar",
+  "contexts": ["page"],
+  "onclick": function (info, tab) {
+    boxcar(info.pageUrl);
+  }
+});
+
+chrome.contextMenus.create({
+  "type": "normal",
+  "title": "Send Image to Boxcar",
+  "contexts": ["image"],
+  "onclick": function (info, tab) {
+    boxcar(info.srcUrl);
   }
 });
