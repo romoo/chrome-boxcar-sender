@@ -9,23 +9,24 @@
 </head>
 <body>
   <div class="settings">
-    <h2>Settings</h2>
+    <h2 i18n-content="settings"></h2>
     <div class="settings_inner">
       <dl>
-        <dt><p>EMAIL</p></dt>
-        <dd><input id="email" placeholder="Your Boxcar account" type="text"></dd>
+        <dt><p i18n-content="settings_email"></p></dt>
+        <dd><input id="email" placeholder="" type="text"></dd>
       </dl>
       <dl>
-        <dt><p>API Key<a title="Use your own API Key" target="_blank" href="http://boxcar.io/help/api/providers">[help]</a></p></dt>
-        <dd><input id="api_key" placeholder="Your Provider api_key" type="text"></dd>
+        <dt><p>API Key<a i18n-content="settings_api_help" id="api_help" title="" target="_blank" href="http://boxcar.io/help/api/providers"></a></p></dt>
+        <dd><input id="api_key" placeholder="" type="text"></dd>
       </dl>
       <div class="checkbox">
-        <label><input type="checkbox" checked="checked">Enable Right-Click Context Menus</label>
-        <p>Experimental, does not work yet.</p>
+        <label><input type="checkbox" checked="checked"><span i18n-content="settings_checkbox_info"></span></label>
+        <p i18n-content="settings_checkbox_tip"></p>
       </div>
-      <a href="###" id="btn_save" class="btn_submit">Updated</a>
+      <a i18n-content="settings_submit" href="###" id="btn_save" class="btn_submit"></a>
     </div>
   </div>
+  <script type="text/javascript" src="./js/i18n.js"></script>
 </body>
 </html>
 

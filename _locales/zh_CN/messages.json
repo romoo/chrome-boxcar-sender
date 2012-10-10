@@ -3,18 +3,63 @@
     "message": "Boxcar Sender"
   },
   "chrome_extension_description": {
-    "message": "使用 Chrome 给安装了 Boxcar.app 的 iOS 设备快速方便的发送消息。"
+    "message": "使用 Chrome 给 iOS 设备上的 Boxcar.app 方便快速的发送消息。"
   },
   "browser_action_title": {
     "message": "通过 Boxcar 发送消息"
   },
-  "title": {
-    "message": "发送成功"
+  "contextMenus_selection_title": {
+    "message": "通过 Boxcar 发送 '%s' "
   },
-  "test": {
-    "message": "测试"
+  "contextMenus_selection_title_notify": {
+    "message": "发送成功。"
   },
-  "app_name_short": {
-    "message": "发送到 Boxcar"
+  "contextMenus_link_title": {
+    "message": "发送链接到 Boxcar"
+  },
+  "contextMenus_page_title": {
+    "message": "发送页面到 Boxcar"
+  },
+  "contextMenus_image_title": {
+    "message": "发送图片到 Boxcar"
+  },
+  "btn_save_text": {
+    "message": "更新设置。"
+  },
+  "trans_send_title": {
+    "message": "发送成功。"
+  },
+  "settings": {
+    "message": "设置"
+  },
+  "settings_email": {
+    "message": "邮箱"
+  },
+  "settings_api_help": {
+    "message": "「帮助」"
+  },
+  "settings_checkbox_info": {
+    "message": "开启右键菜单"
+  },
+  "settings_checkbox_tip": {
+    "message": "实验功能，点了也没用 >_<"
+  },
+  "settings_submit": {
+    "message": "更新"
+  },
+  "pop_submit": {
+    "message": "发送"
+  },
+  "pop_message_placeholder": {
+    "message": "填写要发送的文字"
+  },
+  "settings_email_placeholder": {
+    "message": "你的 Boxcar 帐号"
+  },
+  "settings_api_key_placeholder": {
+    "message": "你的 Provider api_key"
+  },
+  "settings_api_help_title": {
+    "message": "使用自己的 API Key"
   }
 }

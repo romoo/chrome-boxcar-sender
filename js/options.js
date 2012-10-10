@@ -25,18 +25,22 @@ function load() {
 // 添加「点击」事件
 document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('btn_save').addEventListener('click', function () {
-    save("Updated.");
+    save(chrome.i18n.getMessage("btn_save_text"));
   });
   document.getElementById('email').addEventListener("keydown", function(event) {
     if(event.keyCode === 13) {
-      save("Updated.");
+      save(chrome.i18n.getMessage("btn_save_text"));
     }
   }, false);
   document.getElementById('api_key').addEventListener("keydown", function(event) {
     if(event.keyCode === 13) {
-      save("Updated.");
+      save(chrome.i18n.getMessage("btn_save_text"));
     }
   }, false);
+  // i18n
+  document.getElementById('email').placeholder = chrome.i18n.getMessage('settings_email_placeholder');
+  document.getElementById('api_key').placeholder = chrome.i18n.getMessage('settings_api_key_placeholder');
+  document.getElementById('api_help').title = chrome.i18n.getMessage('settings_api_help_title');
 });
 
 // 添加「onload」事件

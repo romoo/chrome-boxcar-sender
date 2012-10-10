@@ -8,13 +8,58 @@
   "browser_action_title": {
     "message": "Boxcar Sender"
   },
-  "title": {
+  "contextMenus_selection_title": {
+    "message": "Send '%s' to Boxcar"
+  },
+  "contextMenus_selection_title_notify": {
+    "message": "Send."
+  },
+  "contextMenus_link_title": {
+    "message": "Send Link to Boxcar"
+  },
+  "contextMenus_page_title": {
+    "message": "Send Page to Boxcar"
+  },
+  "contextMenus_image_title": {
+    "message": "Send Image to Boxcar"
+  },
+  "btn_save_text": {
+    "message": "Update."
+  },
+  "trans_send_title": {
+    "message": "Send."
+  },
+  "settings": {
+    "message": "Settings"
+  },
+  "settings_email": {
+    "message": "EMAIL"
+  },
+  "settings_api_help": {
+    "message": "[help]"
+  },
+  "settings_checkbox_info": {
+    "message": "Enable Right-Click Context Menus"
+  },
+  "settings_checkbox_tip": {
+    "message": "Experimental, does not work yet."
+  },
+  "settings_submit": {
+    "message": "Update"
+  },
+  "pop_submit": {
     "message": "Send"
   },
-  "test": {
-    "message": "test"
+  "pop_message_placeholder": {
+    "message": "This is message"
   },
-  "app_name_short": {
-    "message": "Send"
+  "settings_email_placeholder": {
+    "message": "Your Boxcar account"
+  },
+  "settings_api_key_placeholder": {
+    "message": "Your Provider api_key"
+  },
+  "settings_api_help_title": {
+    "message": "Use your own API Key"
   }
 }
