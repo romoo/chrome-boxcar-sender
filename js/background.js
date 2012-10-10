@@ -1,6 +1,6 @@
 var email = '',
 api_key = '';
-
+console.log(chrome.i18n.getMessage("test"));
 function RequestPermission(callback) {
   window.webkitNotifications.requestPermission(callback);
 }
@@ -76,7 +76,7 @@ chrome.contextMenus.create({
   "title": "Send '%s' to Boxcar",
   "contexts": ["selection"],
   "onclick": function (info, tab) {
-    boxcar("Send" , info.selectionText);
+    boxcar(chrome.i18n.getMessage("title") , info.selectionText);
   }
 });
 

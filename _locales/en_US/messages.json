@@ -1,0 +1,20 @@
+{
+  "chrome_extension_name": {
+    "message": "Boxcar Sender"
+  },
+  "chrome_extension_description": {
+    "message": "Quick send text from Chrome to iOS via Boxcar."
+  },
+  "browser_action_title": {
+    "message": "Boxcar Sender"
+  },
+  "title": {
+    "message": "Send"
+  },
+  "test": {
+    "message": "test"
+  },
+  "app_name_short": {
+    "message": "Send"
+  }
+}

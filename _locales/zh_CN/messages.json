@@ -1,0 +1,20 @@
+{
+  "chrome_extension_name": {
+    "message": "Boxcar Sender"
+  },
+  "chrome_extension_description": {
+    "message": "使用 Chrome 给安装了 Boxcar.app 的 iOS 设备快速方便的发送消息。"
+  },
+  "browser_action_title": {
+    "message": "通过 Boxcar 发送消息"
+  },
+  "title": {
+    "message": "发送成功"
+  },
+  "test": {
+    "message": "测试"
+  },
+  "app_name_short": {
+    "message": "发送到 Boxcar"
+  }
+}
