@@ -5,14 +5,14 @@ function RequestPermission(callback) {
   window.webkitNotifications.requestPermission(callback);
 }
 
-function notify(text) {
+function notify(title, text) {
   if(window.webkitNotifications) {
     if(window.webkitNotifications.checkPermission() > 0) {
       RequestPermission(notify);
     } else {
       var notification = webkitNotifications.createNotification(
         './48.png',
-        'Send.',
+        title,
         text
       );
       notification.ondisplay = function() {
@@ -23,7 +23,7 @@ function notify(text) {
   }
 }
 
-function boxcar(message) {
+function boxcar(title, message) {
   console.log("boxcar:" + message);
   var req = new XMLHttpRequest();
   chrome.storage.sync.get(["b_email","b_api_key"], function(date){
@@ -46,7 +46,7 @@ function boxcar(message) {
         // 4 = "loaded"
         if (req.status == 200) {
           console.log('Send it.');
-          notify(message).show();
+          notify(title , message);
         }
         else if(req.status == 400){
           console.log('No application/event defined');
@@ -64,8 +64,10 @@ function boxcar(message) {
 chrome.extension.onMessage.addListener(
 function(request, sender, sendResponse) {
   if(request.greeting == "hello") {
-    boxcar(request.text);
-    console.log(request.text);
+    boxcar(request.title, request.text);
+    console.log(request.title + request.text);
+  }else if(request.greeting == "saved") {
+    notify(request.title , "");
   }
 });
 
@@ -74,7 +76,7 @@ chrome.contextMenus.create({
   "title": "Send '%s' to Boxcar",
   "contexts": ["selection"],
   "onclick": function (info, tab) {
-    boxcar(info.selectionText);
+    boxcar("Send" , info.selectionText);
   }
 });
 

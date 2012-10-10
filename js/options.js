@@ -1,6 +1,16 @@
-function save() {
+function save(title) {
   chrome.storage.sync.set({"b_email": document.getElementById('email').value, "b_api_key": document.getElementById('api_key').value}, function() {
-    console.log('saved.');
+    console.log('Saved.');
+    chrome.tabs.query({
+      currentWindow: true,
+      active: true
+    }, function(tab) {
+      chrome.extension.sendMessage(tab.id, {
+        "greeting": "saved",
+        "title": title,
+        "text": ""
+      });
+    });
   });
 }
 
@@ -15,8 +25,18 @@ function load() {
 // 添加「点击」事件
 document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('btn_save').addEventListener('click', function () {
-    save();
+    save("Updated.");
   });
+  document.getElementById('email').addEventListener("keydown", function(event) {
+    if(event.keyCode === 13) {
+      save("Updated.");
+    }
+  }, false);
+  document.getElementById('api_key').addEventListener("keydown", function(event) {
+    if(event.keyCode === 13) {
+      save("Updated.");
+    }
+  }, false);
 });
 
 // 添加「onload」事件
