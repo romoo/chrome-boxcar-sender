@@ -12,10 +12,8 @@ function notify(title, text) {
       RequestPermission(notify);
     } else {
       var notification = webkitNotifications.createNotification('./48.png', title, text);
-      notification.ondisplay = function() {
-        // setTimeout('notification.cancel()', 5000);
-      };
       notification.show();
+      setTimeout(function(){ notification.cancel(); },5000);
     }
   }
 }
