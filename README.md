@@ -4,8 +4,9 @@ Created by [Romoo](http://twitter.com/romoo)
 
 ScreenShot
 ----------
-![Chrome Boxcar Sender Screenshot01](https://raw.github.com/romoo/chrome-boxcar-sender/master/img/Screenshot01.png)
-![Chrome Boxcar Sender Screenshot02](https://raw.github.com/romoo/chrome-boxcar-sender/master/img/Screenshot02.png)
+![Boxcar contextMenus](https://raw.github.com/romoo/chrome-boxcar-sender/master/img/Screenshot01.png)
+![Boxcar Sender popup](https://raw.github.com/romoo/chrome-boxcar-sender/master/img/Screenshot02.png)
+![Boxcar Sender settings](https://raw.github.com/romoo/chrome-boxcar-sender/master/img/Screenshot03.png)
 
 Resources
 ---------
