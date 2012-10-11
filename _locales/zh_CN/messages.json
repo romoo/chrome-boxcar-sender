@@ -12,7 +12,7 @@
     "message": "通过 Boxcar 发送 '%s' "
   },
   "contextMenus_selection_title_notify": {
-    "message": "发送成功。"
+    "message": "发送成功"
   },
   "contextMenus_link_title": {
     "message": "发送链接到 Boxcar"
@@ -24,13 +24,13 @@
     "message": "发送图片到 Boxcar"
   },
   "btn_save_text": {
-    "message": "更新设置。"
+    "message": "更新设置"
   },
   "trans_send_title": {
-    "message": "发送成功。"
+    "message": "发送成功"
   },
   "settings": {
-    "message": "设置"
+    "message": "Boxcar Sender 设置"
   },
   "settings_email": {
     "message": "邮箱"
