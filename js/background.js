@@ -56,12 +56,14 @@ function boxcar(title, message) {
   // $('console').innerHTML = 'send it!';
 }
 
-chrome.storage.sync.get(["b_email", "b_api_key"], function(date) {
-  if(date.b_email === "") {
-    chrome.tabs.create({
-      url: chrome.extension.getURL('options.html#email')
-    });
-  }
+document.addEventListener('DOMContentLoaded', function () {
+  chrome.storage.sync.get(["b_email", "b_api_key"], function(date) {
+    if(date.b_email === "") {
+      chrome.tabs.create({
+        url: chrome.extension.getURL('options.html#email')
+      });
+    }
+  });
 });
 
 chrome.extension.onMessage.addListener(
