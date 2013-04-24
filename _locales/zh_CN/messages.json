@@ -66,7 +66,7 @@
     "message": "Boxcar Sender 发送记录"
   },
   "pop_lookhistory": {
-    "message": "近期记录"
+    "message": "发送记录"
   },
   "pop_allhistory": {
     "message": "查看全部"

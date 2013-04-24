@@ -10,7 +10,7 @@ body{
 }
 .pop{
   width: 400px;
-  padding: 10px 0 0;
+  padding: 10px 0 10px;
   position: relative;
   text-align: center;
 }
@@ -176,10 +176,11 @@ body{
 .btn_history{
   color: #4183c4;
   text-align: left;
-  margin: 10px 20px 10px 0;
+  margin: 10px 20px 0 0;
   padding-left: 10px;
   font-size: 12px;
   float: left;
+  display: none;
 }
 .btn_history:hover{
   text-decoration: none;

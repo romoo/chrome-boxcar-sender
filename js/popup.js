@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
     msg.value = (date.b_message ? date.b_message : '');
     local = date.b_messages ? date.b_messages : [];
     local.reverse();
+    console.log(local.length);
+    if ( local.length !== 0 ) { btn_his.style.display = "block";} else{}
   });
   var trans = function () {
     var text = msg.value;
