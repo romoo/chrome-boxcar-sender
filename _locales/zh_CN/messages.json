@@ -61,5 +61,29 @@
   },
   "settings_api_help_title": {
     "message": "使用自己的 API Key"
+  },
+  "history": {
+    "message": "Boxcar Sender 发送记录"
+  },
+  "pop_lookhistory": {
+    "message": "近期记录"
+  },
+  "pop_allhistory": {
+    "message": "查看全部"
+  },
+  "history_loading": {
+    "message": "正在加载。。。"
+  },
+  "history_clear": {
+    "message": "清空历史记录"
+  },
+  "history_tip": {
+    "message": "提示：点击发送"
+  },
+  "history_delete": {
+    "message": "删除所有历史记录？"
+  },
+  "history_send": {
+    "message": "发送？"
   }
 }

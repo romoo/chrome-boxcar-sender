@@ -61,5 +61,29 @@
   },
   "settings_api_help_title": {
     "message": "Use your own API Key"
+  },
+  "history": {
+    "message": "Boxcar Sender History"
+  },
+  "pop_lookhistory": {
+    "message": "Recent History"
+  },
+  "pop_allhistory": {
+    "message": "All History"
+  },
+  "history_loading": {
+    "message": "loading..."
+  },
+  "history_clear": {
+    "message": "Clear History"
+  },
+  "history_tip": {
+    "message": "Tip: Click To Send"
+  },
+  "history_delete": {
+    "message": "Delete All History?"
+  },
+  "history_send": {
+    "message": "Send?"
   }
 }

@@ -1,5 +1,6 @@
 var email = '',
-  api_key = '';
+  api_key = '',
+  local = [];
 console.log(chrome.i18n.getMessage("test"));
 
 function RequestPermission(callback) {
@@ -21,7 +22,7 @@ function notify(title, text) {
 function boxcar(title, message) {
   console.log("boxcar:" + message);
   var req = new XMLHttpRequest();
-  chrome.storage.sync.get(["b_email", "b_api_key"], function(date) {
+  chrome.storage.sync.get(["b_email", "b_api_key", "b_messages"], function(date) {
     var email_page = chrome.extension.getURL('options.html#email');
     // var api_key_page = chrome.extension.getURL('options.html#email');
     // console.log(email_page);
@@ -30,6 +31,10 @@ function boxcar(title, message) {
     // email= (date.b_email ? date.b_email : window.open(email_page, "popup"));
     // api_key= (date.b_api_key ? date.b_api_key : window.open(api_key_page, "popup"));
     console.log(api_key);
+    local = date.b_messages ? date.b_messages : [];
+    console.log('storage -> local');
+    local.push(message);
+    console.log(local);
 
     var params = 'email=' + email + '&notification[from_screen_name]=Chrome&notification[message]=' + message;
     req.open('POST', 'http://boxcar.io/devices/providers/' + api_key + '/notifications', true);
@@ -52,6 +57,9 @@ function boxcar(title, message) {
       }
     };
     req.send(params);
+    chrome.storage.sync.set({"b_messages": local}, function (date) {
+      console.log('local -> storage');
+    })
   });
   // $('console').innerHTML = 'send it!';
 }
