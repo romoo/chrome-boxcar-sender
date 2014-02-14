@@ -32,8 +32,8 @@
   "settings": {
     "message": "Boxcar Sender Settings"
   },
-  "settings_email": {
-    "message": "EMAIL"
+  "settings_acces_token": {
+    "message": "ACCES TOKEN"
   },
   "settings_api_help": {
     "message": "[help]"
@@ -53,8 +53,8 @@
   "pop_message_placeholder": {
     "message": "This is message"
   },
-  "settings_email_placeholder": {
-    "message": "Your Boxcar account"
+  "settings_acces_token_placeholder": {
+    "message": "Your device ACCES TOKEN"
   },
   "settings_api_key_placeholder": {
     "message": "Your Provider api_key"

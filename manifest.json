@@ -1,6 +1,6 @@
 { 
   "name": "__MSG_chrome_extension_name__", 
-  "version": "0.7.1", 
+  "version": "1.0.0", 
   "description": "__MSG_chrome_extension_description__", 
   "manifest_version": 2,
   "background" : {
@@ -9,7 +9,8 @@
   "permissions": [
     "contextMenus",
     "tabs",
-    "*://boxcar.io/*",
+    "*://*.boxcar.io/*",
+    "https://*/*",
     "storage",
     "notifications"
   ],
