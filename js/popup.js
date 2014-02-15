@@ -16,18 +16,13 @@ document.addEventListener('DOMContentLoaded', function() {
   var trans = function () {
     var text = msg.value;
     console.log(text);
-    chrome.tabs.query({
-      currentWindow: true,
-      active: true
-    }, function(tab) {
-      console.log('ready to send.');
-      chrome.extension.sendMessage(tab.id, {
-        'greeting': 'hello',
-        'title': chrome.i18n.getMessage('trans_send_title'),
-        'text': text
-      });
-      chrome.storage.sync.set({'b_message': ''});
+    chrome.runtime.sendMessage({
+      'greeting': 'hello',
+      'title': chrome.i18n.getMessage('trans_send_title'),
+      'text': text
+    }, function (response) {
     });
+    chrome.storage.sync.set({'b_message': ''});
   };
   // Add Click Event
   document.getElementById('btn_sent').addEventListener('click', trans);

@@ -1,7 +1,6 @@
 var ACCES_TOKEN = '',
   // api_key = '',
   local = [];
-console.log(chrome.i18n.getMessage("test"));
 
 function RequestPermission(callback) {
   window.webkitNotifications.requestPermission(callback);
@@ -74,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-chrome.extension.onMessage.addListener(
+chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if (request.greeting == "hello"){
       boxcar(request.title, request.text);
