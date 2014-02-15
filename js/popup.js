@@ -10,12 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
     msg.value = (date.b_message ? date.b_message : '');
     local = date.b_messages ? date.b_messages : [];
     local.reverse();
-    console.log(local.length);
     if ( local.length !== 0 ) { btn_his.style.display = "block";} else{}
   });
   var trans = function () {
     var text = msg.value;
-    console.log(text);
     chrome.runtime.sendMessage({
       'greeting': 'hello',
       'title': chrome.i18n.getMessage('trans_send_title'),
@@ -29,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Add Keydown Event
   msg.addEventListener('keyup', function(event) {
     chrome.storage.sync.set({'b_message': msg.value},function () {
-      console.log(msg.value);
     });
     if(event.keyCode === 13) {
       trans();
@@ -45,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var local_num = "";
     var history_list = document.querySelector('.history_list');
 
-    console.log(local.length);
     if ( local.length > 5 ) {
       local_num = 5;
       more.style.display = "block";

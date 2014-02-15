@@ -1,9 +1,19 @@
+function send(text) {
+  var r = confirm(chrome.i18n.getMessage("history_send"));
+  if ( r === true ) {
+    chrome.runtime.sendMessage({
+      'greeting': 'hello',
+      'title': chrome.i18n.getMessage('trans_send_title'),
+      'text': text
+    });
+    location.reload();
+  } else{ console.log('no'); }
+}
+
 function loadhistory () {
   chrome.storage.sync.get(["b_messages"],function(date){
-    console.log("local: " + local + " date: " + date.b_messages);
     var inner = document.querySelector(".settings_inner");
-    if ( date.b_messages ) {
-      console.log("有数据");
+    if ( date.b_messages ) { // 有数据
       var local = date.b_messages;
       local.reverse();
       var temp = "";
@@ -16,40 +26,24 @@ function loadhistory () {
       loading.style.display = "none";
       tip.style.display = "block";
       history_all.innerHTML = temp;
-      console.log(history_all);
-      var history_one = history_all.getElementsByTagName('li');
+      var history_one = document.querySelectorAll('.history_all li');
       for (var j = 0; j < history_one.length; j++) {
-        history_one[j].onclick = function () {
-          var r = confirm(chrome.i18n.getMessage("history_send"));
-          if ( r === true ) {
-            var text = this.firstChild.nodeValue;
-            console.log(text);
-            chrome.tabs.query({
-              currentWindow: true,
-              active: true
-            }, function(tab) {
-              console.log('ready to send.');
-              chrome.extension.sendMessage(tab.id, {
-                'greeting': 'hello',
-                'title': chrome.i18n.getMessage('trans_send_title'),
-                'text': text
-              });
-              location.reload();
-            });
-          } else{ console.log('no'); }
-        };
+        var text = history_one[j].firstChild.nodeValue;
+        history_one[j].addEventListener('click', function(event){
+          send(text);
+        }, false);
       }
     } else{
       inner.innerHTML = '<h3>现在还没有数据</h3>';
     }
   });
 }
-loadhistory();
 
 
 
 // 添加「onload」事件
 window.addEventListener("load", function () {
+  loadhistory();
   var btn_clear = document.querySelector('.btn_clear');
   btn_clear.onclick = function () {
     var r = confirm(chrome.i18n.getMessage("history_delete"));

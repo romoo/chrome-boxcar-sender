@@ -1,5 +1,4 @@
 var ACCES_TOKEN = '',
-  // api_key = '',
   local = [];
 
 function RequestPermission(callback) {
@@ -23,17 +22,9 @@ function boxcar(title, message) {
   var req = new XMLHttpRequest();
   chrome.storage.sync.get(["b_acces_token", "b_messages"], function(date) {
     var acces_token_page = chrome.extension.getURL('options.html#acces_token');
-    // var api_key_page = chrome.extension.getURL('options.html#email');
-    // console.log(email_page);
     ACCES_TOKEN = (date.b_acces_token ? date.b_acces_token : '');
-    // api_key = (date.b_api_key ? date.b_api_key : '');
-    // email= (date.b_email ? date.b_email : window.open(email_page, "popup"));
-    // api_key= (date.b_api_key ? date.b_api_key : window.open(api_key_page, "popup"));
-    // console.log(api_key);
     local = date.b_messages ? date.b_messages : [];
-    console.log('storage -> local');
     local.push(message);
-    console.log(local);
 
     var params = '&user_credentials=' + ACCES_TOKEN + '&notification[title]=Chrome&notification[sound]=bird-1&notification[long_message]=' + message;
     req.open('POST', 'https://new.boxcar.io/api/notifications', true);
@@ -46,7 +37,6 @@ function boxcar(title, message) {
           console.log('Send it.');
           notify(title, message);
         } else if(req.status == 400 || req.status == 405 || req.status == 404) {
-          // console.log('No application/event defined');
           chrome.tabs.create({
             url: acces_token_page
           });
@@ -57,10 +47,8 @@ function boxcar(title, message) {
     };
     req.send(params);
     chrome.storage.sync.set({"b_messages": local}, function (date) {
-      console.log('local -> storage');
     });
   });
-  // $('console').innerHTML = 'send it!';
 }
 
 document.addEventListener('DOMContentLoaded', function () {
