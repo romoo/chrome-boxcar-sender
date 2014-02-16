@@ -35,7 +35,7 @@ function boxcar(title, message) {
       // TODO: do sth here based on failure/success.
       if(req.readyState == 4) {
         // 4 = "loaded"
-        if(req.status == 200) {
+        if(req.status == 201 ) {
           console.log('Send it.');
           notify(title, message);
         } else if(req.status == 400 || req.status == 405 || req.status == 404) {
