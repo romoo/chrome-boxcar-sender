@@ -38,6 +38,9 @@
   "settings_api_help": {
     "message": "[help]"
   },
+  "settings_sounds":{
+    "message": "Configure Sounds"
+  },
   "settings_checkbox_info": {
     "message": "Enable Right-Click Context Menus"
   },

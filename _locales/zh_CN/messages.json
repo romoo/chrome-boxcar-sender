@@ -38,6 +38,9 @@
   "settings_api_help": {
     "message": "「帮助」"
   },
+  "settings_sounds":{
+    "message": "铃声"
+  },
   "settings_checkbox_info": {
     "message": "开启右键菜单"
   },
