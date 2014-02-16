@@ -1,21 +1,20 @@
 function save(title) {
-  chrome.storage.sync.set({"b_acces_token": document.getElementById('acces_token').value}, function() {
-    chrome.tabs.query({
-      currentWindow: true,
-      active: true
-    }, function(tab) {
-      chrome.extension.sendMessage(tab.id, {
-        "greeting": "saved",
-        "title": title,
-        "text": ""
-      });
+  chrome.storage.sync.set({
+    "b_acces_token": document.getElementById('acces_token').value,
+    "b_sounds": document.getElementById('settings_sounds').value
+  }, function() {
+    chrome.runtime.sendMessage({
+      "greeting": "saved",
+      "title": title,
+      "text": ""
     });
   });
 }
 
 function load() {
-  chrome.storage.sync.get(["b_acces_token"],function(date){
+  chrome.storage.sync.get(["b_acces_token", "b_sounds"],function(date){
     document.getElementById('acces_token').value = (date.b_acces_token ? date.b_acces_token : '');
+    document.getElementById('settings_sounds').value = (date.b_sounds ? date.b_sounds : 'bird-1');
   });
 }
 

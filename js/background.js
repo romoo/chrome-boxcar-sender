@@ -1,4 +1,5 @@
 var ACCES_TOKEN = '',
+  sounds = '',
   local = [];
 
 function RequestPermission(callback) {
@@ -20,13 +21,14 @@ function notify(title, text) {
 function boxcar(title, message) {
   console.log("boxcar:" + message);
   var req = new XMLHttpRequest();
-  chrome.storage.sync.get(["b_acces_token", "b_messages"], function(date) {
+  chrome.storage.sync.get(["b_acces_token", "b_messages", "b_sounds"], function(date) {
     var acces_token_page = chrome.extension.getURL('options.html#acces_token');
     ACCES_TOKEN = (date.b_acces_token ? date.b_acces_token : '');
+    sounds = (date.b_sounds ? date.b_sounds : 'bird-1');
     local = date.b_messages ? date.b_messages : [];
     local.push(message);
 
-    var params = '&user_credentials=' + ACCES_TOKEN + '&notification[title]=Chrome&notification[sound]=bird-1&notification[long_message]=' + message;
+    var params = '&user_credentials=' + ACCES_TOKEN + '&notification[title]=Chrome&notification[sound]='+ sounds +'&notification[long_message]=' + message;
     req.open('POST', 'https://new.boxcar.io/api/notifications', true);
     req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     req.onreadystatechange = function() {
